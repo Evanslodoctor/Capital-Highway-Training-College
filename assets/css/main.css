@@ -888,8 +888,11 @@ section,
 # Global Section Titles
 --------------------------------------------------------------*/
 .section-title {
-  padding-bottom: 60px;
+  padding-bottom: 10px;
+  padding-top: 10px;
   position: relative;
+  background-color: gray;
+  text-align: center;
 }
 
 .section-title h2 {
@@ -900,7 +903,7 @@ section,
   margin: 0;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  color: color-mix(in srgb, var(--default-color), transparent 0%);
   position: relative;
 }
 

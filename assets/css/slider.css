@@ -1,6 +1,7 @@
 .carousel-item {
     position: relative;
     transition: opacity 0s ease-in-out; /* Smooth fade transition */
+    
 }
 
 .carousel-item img {

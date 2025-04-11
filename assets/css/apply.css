@@ -1,0 +1,105 @@
+
+:root {
+    --primary-dark-blue: #1a237e;
+    --primary-pink: #e91e63;
+    --primary-gray: #607d8b;
+    --light-gray: #f5f5f5;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-gray);
+}
+
+.navbar-brand img {
+    height: 50px;
+}
+
+.bg-dark-blue {
+    background-color: var(--primary-dark-blue);
+}
+
+.text-pink {
+    color: var(--primary-pink);
+}
+
+.btn-pink {
+    background-color: var(--primary-pink);
+    color: white;
+}
+
+.btn-pink:hover {
+    background-color: #c2185b;
+    color: white;
+}
+
+.border-pink {
+    border-color: var(--primary-pink) !important;
+}
+
+.application-header {
+    background: linear-gradient(rgba(26, 35, 126, 0.8), rgba(26, 35, 126, 0.9)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 80px 0;
+    margin-bottom: 40px;
+}
+
+.form-section {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.form-section h3 {
+    color: var(--primary-dark-blue);
+    border-bottom: 2px solid var(--primary-pink);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    background-color: var(--primary-pink);
+}
+
+.required-field::after {
+    content: " *";
+    color: var(--primary-pink);
+}
+
+footer {
+    background-color: var(--primary-dark-blue);
+    color: white;
+    padding: 30px 0;
+}
+
+.contact-info i {
+    color: var(--primary-pink);
+    margin-right: 10px;
+}
+
+.step-indicator {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.step-indicator:hover {
+    color: var(--primary-pink) !important;
+}
+
+@media (max-width: 768px) {
+    .application-header {
+        padding: 50px 0;
+    }
+    
+    .form-section {
+        padding: 20px;
+    }
+    
+    .step-indicator {
+        font-size: 0.8rem;
+    }
+}

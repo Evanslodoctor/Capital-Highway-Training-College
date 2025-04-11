@@ -74,7 +74,7 @@
         preloader.remove();
         console.warn('Preloader removed after timeout.');
       }
-    }, 5000); // 10,000 ms = 5 seconds
+    }, 5000); // 5,000 ms = 5 seconds
   }
   
   /**

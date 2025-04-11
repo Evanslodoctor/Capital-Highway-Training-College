@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programs - Capital Highway Training College</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #003366;
+            --primary-pink: #FF6B8B;
+            --primary-gray: #6C757D;
+            --light-gray: #F8F9FA;
+            --dark-gray: #343A40;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-gray);
+        }
+        
+        .navbar {
+            background-color: var(--primary-blue);
+        }
+        
+        .navbar-brand img {
+            height: 50px;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-blue);
+            border-color: var(--primary-blue);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary-blue);
+            border-color: var(--primary-blue);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+        
+        .accent-color {
+            color: var(--primary-pink);
+        }
+        
+        .bg-light-gray {
+            background-color: var(--light-gray);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)), 
+                        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+        }
+        
+        .course-card {
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 20px;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .course-card .card-header {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 15px;
+            border-bottom: 0;
+        }
+        
+        .course-card .card-body {
+            padding: 20px;
+        }
+        
+        .course-card .card-footer {
+            background-color: var(--light-gray);
+            border-top: 0;
+            padding: 15px 20px;
+        }
+        
+        .badge-knec {
+            background-color: #28a745;
+            color: white;
+        }
+        
+        .badge-tvet {
+            background-color: #17a2b8;
+            color: white;
+        }
+        
+        .badge-nita {
+            background-color: #6f42c1;
+            color: white;
+        }
+        
+        .badge-chtc {
+            background-color: var(--primary-pink);
+            color: white;
+        }
+        
+        .badge-kasneb {
+            background-color: #fd7e14;
+            color: white;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(0, 51, 102, 0.1);
+            color: var(--primary-blue);
+        }
+        
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(0, 51, 102, 0.25);
+        }
+        
+        footer {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 20px;
+            margin-right: 15px;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--primary-pink);
+        }
+        
+        .department-tabs .nav-link {
+            color: var(--primary-gray);
+            font-weight: 500;
+        }
+        
+        .department-tabs .nav-link.active {
+            color: var(--primary-blue);
+            border-bottom: 3px solid var(--primary-pink);
+        }
+        
+        .course-level {
+            position: relative;
+            margin-bottom: 40px;
+        }
+        
+        .course-level h2 {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .fee-highlight {
+            font-weight: bold;
+            color: var(--primary-pink);
+        }
+        
+        .requirements-badge {
+            background-color: var(--primary-gray);
+            color: white;
+            font-size: 0.8rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 60px 0;
+            }
+            
+            .course-card {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://via.placeholder.com/150x50?text=CHTC+Logo" alt="Capital Highway Training College">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Admissions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <a href="#" class="btn btn-outline-light ms-lg-3">Apply Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">Our Programs</h1>
+            <p class="lead mb-5">Explore our wide range of accredited courses with flexible payment options</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#programs" class="btn btn-primary btn-lg px-4">Browse Programs</a>
+                <a href="#" class="btn btn-outline-light btn-lg px-4">Download Fees Structure</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Find Your Perfect Program</h2>
+                <p class="lead text-muted">Organized by department and qualification level</p>
+            </div>
+            
+            <!-- Special Offer Banner -->
+            <div class="alert alert-info mb-5">
+                <h4 class="alert-heading">Special Fee Structure!</h4>
+                <p class="mb-2">For Certificate and Artisan courses, only two terms are payable – the third term is completely free.</p>
+                <p class="mb-0">For Diploma and Level 6 courses, the third term is partially free – students only pay tuition fees of Ksh 16,000.</p>
+            </div>
+            
+            <!-- Department Tabs -->
+            <ul class="nav nav-pills department-tabs mb-5 justify-content-center flex-wrap" id="departmentTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="all-tab" data-bs-toggle="pill" data-bs-target="#all" type="button">All Departments</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="ict-tab" data-bs-toggle="pill" data-bs-target="#ict" type="button">ICT</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="business-tab" data-bs-toggle="pill" data-bs-target="#business" type="button">Business</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="hospitality-tab" data-bs-toggle="pill" data-bs-target="#hospitality" type="button">Hospitality</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="agriculture-tab" data-bs-toggle="pill" data-bs-target="#agriculture" type="button">Agriculture</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="fashion-tab" data-bs-toggle="pill" data-bs-target="#fashion" type="button">Fashion & Design</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="cosmetology-tab" data-bs-toggle="pill" data-bs-target="#cosmetology" type="button">Cosmetology</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="technical-tab" data-bs-toggle="pill" data-bs-target="#technical" type="button">Technical & Engineering</button>
+                </li>
+            </ul>
+            
+            <div class="tab-content" id="departmentTabsContent">
+                <div class="tab-pane fade show active" id="all" role="tabpanel">
+                    <!-- All departments content -->
+                    
+                    <!-- Diploma Programs -->
+                    <div class="course-level">
+                        <h2>Diploma Programs</h2>
+                        <div class="row">
+                            <!-- ICT -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="course-card card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">Diploma in ICT</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="text-muted">Comprehensive IT training covering hardware, software, networking and databases.</p>
+                                        <div class="mb-3">
+                                            <span class="badge badge-knec me-1">KNEC</span>
+                                            <span class="badge requirements-badge me-1">KCSE C-</span>
+                                        </div>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-clock me-2 accent-color"></i> Duration: 9 Terms (3 Years)</li>
+                                            <li><i class="fas fa-money-bill-wave me-2 accent-color"></i> Fees: <span class="fee-highlight">22,500 per term</span></li>
+                                            <li><i class="fas fa-user-graduate me-2 accent-color"></i> Mode: Full-time/Part-time</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="#" class="btn btn-sm btn-primary">Learn More</a>
+                                        <a href="#" class="btn btn-sm btn-outline-primary ms-2">Apply Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Business -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="course-card card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">Diploma in Business Management</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="text-muted">Practical business skills in management, accounting, marketing and entrepreneurship.</p>
+                                        <div class="mb-3">
+                                            <span class="badge badge-knec me-1">KNEC</span>
+                                            <span class="badge requirements-badge me-1">KCSE C-</span>
+                                        </div>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-clock me-2 accent-color"></i> Duration: 9 Terms (3 Years)</li>
+                                            <li><i class="fas fa-money-bill-wave me-2 accent-color"></i> Fees: <span class="fee-highlight">22,500 per term</span></li>
+                                            <li><i class="fas fa-user-graduate me-2 accent-color"></i> Mode: Full-time/Part-time</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="#" class="btn btn-sm btn-primary">Learn More</a>
+                                        <a href="#" class="btn btn-sm btn-outline-primary ms-2">Apply Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Hospitality -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="course-card card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">Diploma in Food & Beverage</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="text-muted">Training in food preparation, beverage service, and hospitality management.</p>
+                                        <div class="mb-3">
+                                            <span class="badge badge-knec me-1">KNEC</span>
+                                            <span class="badge requirements-badge me-1">KCSE C-</span>
+                                        </div>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-clock me-2 accent-color"></i> Duration: 9 Terms (3 Years)</li>
+                                            <li><i class="fas fa-money-bill-wave me-2 accent-color"></i> Fees: <span class="fee-highlight">22,500 per term</span></li>
+                                            <li><i class="fas fa-user-graduate me-2 accent-color"></i> Mode: Full-time/Part-time</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="#" class="btn btn-sm btn-primary">Learn More</a>
+                                        <a href="#" class="btn btn-sm btn-outline-primary ms-2">Apply Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Agriculture -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="course-card card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">Diploma in Agribusiness</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="text-muted">Training in agricultural business management, value addition, and farm operations.</p>
+                                        <div class="mb-3">
+                                            <span class="badge badge-knec me-1">KNEC</span>
+                                            <span class="badge requirements-badge me-1">KCSE C-</span>
+                                        </div>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-clock me-2 accent-color"></i> Duration: 9 Terms (3 Years)</li>
+                                            <li><i class="fas fa-money-bill-wave me-2 accent-color"></i> Fees: <span class="fee-highlight">22,500 per term</span></li>
+                                            <li><i class="fas fa-user-graduate me-2 accent-color"></i> Mode: Full-time/Part-time</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="#" class="btn btn-sm btn-primary">Learn More</a>
+                                        <a href="#" class="btn btn-sm btn-outline-primary ms-2">Apply Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Cosmetology -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="course-card card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">Diploma in Cosmetology</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="text-muted">Comprehensive training in beauty therapy, hairdressing, and salon management.</p>
+                                        <div class="mb-3">
+                                            <span class="badge badge-nita me-1">NITA</span>
+                                            <span class="badge requirements-badge me-1">KCSE C-</span>
+                                        </div>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-clock me-2 accent-color"></i> Duration: 9 Terms (3 Years)</li>
+                                            <li><i class="fas fa-money-bill-wave me-2 accent-color"></i> Fees: <span class="fee-highlight">22,500 per term</span></li>
+                                            <li><i class="fas fa-user-graduate me-2 accent-color"></i> Mode: Full-time/Part-time</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="#" class="btn btn-sm btn-primary">Learn More</a>
+                                        <a href="#" class="btn btn-sm btn-outline-primary ms-2">Apply Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Technical -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="course-card card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">Electrical Installation Level 6</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="text-muted">Advanced electrical installation skills for industrial and commercial applications.</p>
+                                        <div class="mb-3">
+                                            <span class="badge badge-tvet me-1">TVET-CDACC</span>
+                                            <span class="badge requirements-badge me-1">KCSE D</span>
+                                        </div>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-clock me-2 accent-color"></i> Duration: 9 Terms (3 Years)</li>
+                                            <li><i class="fas fa-money-bill-wave me-2 accent-color"></i> Fees: <span class="fee-highlight">22,500 per term</span></li>
+                                            <li><i class="fas fa-user-graduate me-2 accent-color"></i> Mode: Full-time/Part-time</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="#" class="btn btn-sm btn-primary">Learn More</a>
+                                        <a href="#" class="btn btn-sm btn-outline-primary ms-2">Apply Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Certificate Programs -->
+                    <div class="course-level">
+                        <h2>Certificate Programs</h2>
+                        <div class="row">
+                            <!-- ICT -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="course-card card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">Certificate in ICT</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="text-muted">Basic computer skills including word processing, spreadsheets, presentations and internet.</p>
+                                        <div class="mb-3">
+                                            <span class="badge badge-knec me-1">KNEC</span>
+                                            <span class="badge requirements-badge me-1">KCSE D</span>
+                                        </div>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-clock me-2 accent-color"></i> Duration: 6 Terms (2 Years)</li>
+                                            <li><i class="fas fa-money-bill-wave me-2 accent-color"></i> Fees: <span class="fee-highlight">21,500 per term</span></li>
+                                            <li><i class="fas fa-user-graduate me-2 accent-color"></i> Mode: Full-time/Part-time</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="#" class="btn btn-sm btn-primary">Learn More</a>
+                                        <a href="#" class="btn btn-sm btn-outline-primary ms-2">Apply Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Business -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="course-card card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">Certificate in Business Management</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="text-muted">Fundamental business skills in management, accounting, and customer service.</p>
+                                        <div class="mb-3">
+                                            <span class="badge badge-knec me-1">KNEC</span>
+                                            <span class="badge requirements-badge me-1">KCSE D</span>
+                                        </div>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-clock me-2 accent-color"></i> Duration: 6 Terms (2 Years)</li>
+                                            <li><i class="fas fa-money-bill-wave me-2 accent-color"></i> Fees: <span class="fee-highlight">21,500 per term</span></li>
+                                            <li><i class="fas fa-user-graduate me-2 accent-color"></i> Mode: Full-time/Part-time</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="#" class="btn btn-sm btn-primary">Learn More</a>
+                                        <a href="#" class="btn btn-sm btn-outline-primary ms-2">Apply Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Hospitality -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="course-card card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">Certificate in Food & Beverage</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="text-muted">Basic training in food preparation, beverage service, and hospitality operations.</p>
+                                        <div class="mb-3">
+                                            <span class="badge badge-knec me-1">KNEC</span>
+                                            <span class="badge requirements-badge me-1">KCSE D</span>
+                                        </div>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-clock me-2 accent-color"></i> Duration: 6 Terms (2 Years)</li>
+                                            <li><i class="fas fa-money-bill-wave me-2 accent-color"></i> Fees: <span class="fee-highlight">21,500 per term</span></li>
+                                            <li><i class="fas fa-user-graduate me-2 accent-color"></i> Mode: Full-time/Part-time</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="#" class="btn btn-sm btn-primary">Learn More</a>
+                                        <a href="#" class="btn btn-sm btn-outline-primary ms-2">Apply Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Agriculture -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="course-card card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">Certificate in General Agriculture</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="text-muted">Basic agricultural skills in crop production, animal husbandry and farm management.</p>
+                                        <div class="mb-3">
+                                            <span class="badge badge-knec me-1">KNEC</span>
+                                            <span class="badge requirements-badge me-1">KCSE D</span>
+                                        </div>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-clock me-2 accent-color"></i> Duration: 6 Terms (2 Years)</li>
+                                            <li><i class="fas fa-money-bill-wave me-2 accent-color"></i> Fees: <span class="fee-highlight">21,500 per term</span></li>
+                                            <li><i class="fas fa-user-graduate me-2 accent-color"></i> Mode: Full-time/Part-time</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="#" class="btn btn-sm btn-primary">Learn More</a>
+                                        <a href="#" class="btn btn-sm btn-outline-primary ms-2">Apply Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Cosmetology -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="course-card card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">Certificate in Cosmetology</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="text-muted">Training in beauty therapy, hairdressing, nail technology and salon operations.</p>
+                                        <div class="mb-3">
+                                            <span class="badge badge-nita me-1">NITA</span>
+                                            <span class="badge requirements-badge me-1">KCSE D</span>
+                                        </div>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-clock me-2 accent-color"></i> Duration: 2-3 Terms</li>
+                                            <li><i class="fas fa-money-bill-wave me-2 accent-color"></i> Fees: <span class="fee-highlight">21,500 per term</span></li>
+                                            <li><i class="fas fa-user-graduate me-2 accent-color"></i> Mode: Full-time/Part-time</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="#" class="btn btn-sm btn-primary">Learn More</a>
+                                        <a href="#" class="btn btn-sm btn-outline-primary ms-2">Apply Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Technical -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="course-card card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">Plumbing Technology Level 5</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="text-muted">Practical skills in plumbing installation, repairs and maintenance.</p>
+                                        <div class="mb-3">
+                                            <span class="badge badge-tvet me-1">TVET-CDACC</span>
+                                            <span class="badge requirements-badge me-1">KCSE D</span>
+                                        </div>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-clock me-2 accent-color"></i> Duration: 6 Terms (2 Years)</li>
+                                            <li><i class="fas fa-money-bill-wave me-2 accent-color"></i> Fees: <span class="fee-highlight">21,500 per term</span></li>
+                                            <li><i class="fas fa-user-graduate me-2 accent-color"></i> Mode: Full-time/Part-time</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="#" class="btn btn-sm btn-primary">Learn More</a>
+                                        <a href="#" class="btn btn-sm btn-outline-primary ms-2">Apply Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Short Courses and Artisan Programs -->
+                    <div class="course-level">
+                        <h2>Short Courses & Artisan Programs</h2>
+                        <div class="row">
+                            <!-- ICT Short Courses -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="course-card card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">Web Development</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="text-muted">Training in frontend and backend web development technologies.</p>
+                                        <div class="mb-3">
+                                            <span class="badge badge-tvet me-1">TVET-CDACC</span>
+                                            <span class="badge requirements-badge me-1">Open</span>
+                                        </div>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-clock me-2 accent-color"></i> Duration: 2 Terms</li>
+                                            <li><i class="fas fa-money-bill-wave me-2 accent-color"></i> Fees: <span class="fee-highlight">21,500 per term</span></li>
+                                            <li><i class="fas fa-user-graduate me-2 accent-color"></i> Mode: Full-time/Part-time</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="#" class="btn btn-sm btn-primary">Learn More</a>
+                                        <a href="#" class="btn btn-sm btn-outline-primary ms-2">Apply Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Fashion & Design -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="course-card card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">Dress Making</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="text-muted">Training in dress design, pattern making, and garment construction.</p>
+                                        <div class="mb-3">
+                                            <span class="badge badge-nita me-1">NITA</span>
+                                            <span class="badge requirements-badge me-1">KCSE/Open</span>
+                                        </div>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-clock me-2 accent-color"></i> Duration: 2-3 Terms</li>
+                                            <li><i class="fas fa-money-bill-wave me-2 accent-color"></i> Fees: <span class="fee-highlight">21,500 per term</span></li>
+                                            <li><i class="fas fa-user-graduate me-2 accent-color"></i> Mode: Full-time/Part-time</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="#" class="btn btn-sm btn-primary">Learn More</a>
+                                        <a href="#" class="btn btn-sm btn-outline-primary ms-2">Apply Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Cosmetology Short Courses -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="course-card card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">Nail Technology</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="text-muted">Specialized training in manicure, pedicure, and nail art techniques.</p>
+                                        <div class="mb-3">
+                                            <span class="badge badge-chtc me-1">CHTC Exams</span>
+                                            <span class="badge requirements-badge me-1">Open</span>
+                                        </div>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-clock me-2 accent-color"></i> Duration: 1 Month</li>
+                                            <li><i class="fas fa-money-bill-wave me-2 accent-color"></i> Fees: <span class="fee-highlight">10,000 total</span></li>
+                                            <li><i class="fas fa-user-graduate me-2 accent-color"></i> Mode: Full-time/Part-time</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="#" class="btn btn-sm btn-primary">Learn More</a>
+                                        <a href="#" class="btn btn-sm btn-outline-primary ms-2">Apply Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Professional Courses -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="course-card card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">CPA Level I-III</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="text-muted">Professional accounting certification course.</p>
+                                        <div class="mb-3">
+                                            <span class="badge badge-kasneb me-1">KASNEB</span>
+                                            <span class="badge requirements-badge me-1">KCSE</span>
+                                        </div>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-clock me-2 accent-color"></i> Duration: 3 Terms</li>
+                                            <li><i class="fas fa-money-bill-wave me-2 accent-color"></i> Fees: <span class="fee-highlight">16,000 per term</span></li>
+                                            <li><i class="fas fa-user-graduate me-2 accent-color"></i> Mode: Full-time/Part-time</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="#" class="btn btn-sm btn-primary">Learn More</a>
+                                        <a href="#" class="btn btn-sm btn-outline-primary ms-2">Apply Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Technical Short Courses -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="course-card card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">Electrician (Grade 1-3)</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="text-muted">Trade test preparation for electrical installation certification.</p>
+                                        <div class="mb-3">
+                                            <span class="badge badge-nita me-1">NITA</span>
+                                            <span class="badge requirements-badge me-1">KCSE D</span>
+                                        </div>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-clock me-2 accent-color"></i> Duration: 2-3 Terms</li>
+                                            <li><i class="fas fa-money-bill-wave me-2 accent-color"></i> Fees: <span class="fee-highlight">21,500 per term</span></li>
+                                            <li><i class="fas fa-user-graduate me-2 accent-color"></i> Mode: Full-time/Part-time</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="#" class="btn btn-sm btn-primary">Learn More</a>
+                                        <a href="#" class="btn btn-sm btn-outline-primary ms-2">Apply Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- ICT Intensive Courses -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="course-card card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">Mobile App Development</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="text-muted">Intensive training in mobile application development for Android and iOS.</p>
+                                        <div class="mb-3">
+                                            <span class="badge badge-chtc me-1">CHTC Exams</span>
+                                            <span class="badge requirements-badge me-1">Open</span>
+                                        </div>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-clock me-2 accent-color"></i> Duration: 4 Months</li>
+                                            <li><i class="fas fa-money-bill-wave me-2 accent-color"></i> Fees: <span class="fee-highlight">40,000 total</span></li>
+                                            <li><i class="fas fa-user-graduate me-2 accent-color"></i> Mode: Full-time/Part-time</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="#" class="btn btn-sm btn-primary">Learn More</a>
+                                        <a href="#" class="btn btn-sm btn-outline-primary ms-2">Apply Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Individual department tabs would contain filtered content -->
+                <div class="tab-pane fade" id="ict" role="tabpanel">
+                    <div class="alert alert-info">ICT Department Programs - Filtered content would appear here</div>
+                </div>
+                
+                <div class="tab-pane fade" id="business" role="tabpanel">
+                    <div class="alert alert-info">Business Department Programs - Filtered content would appear here</div>
+                </div>
+                
+                <!-- Other department tabs would follow the same pattern -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Accreditation Section -->
+    <section class="py-5 bg-light-gray">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Our Accrediting Bodies</h2>
+                <p class="lead text-muted">Recognized by leading education and professional bodies</p>
+            </div>
+            
+            <div class="row justify-content-center align-items-center">
+                <div class="col-6 col-md-3 mb-4 text-center">
+                    <img src="https://via.placeholder.com/150x80?text=KNEC" alt="KNEC" class="img-fluid" style="max-height: 80px;">
+                </div>
+                <div class="col-6 col-md-3 mb-4 text-center">
+                    <img src="https://via.placeholder.com/150x80?text=TVET-CDACC" alt="TVET-CDACC" class="img-fluid" style="max-height: 80px;">
+                </div>
+                <div class="col-6 col-md-3 mb-4 text-center">
+                    <img src="https://via.placeholder.com/150x80?text=NITA" alt="NITA" class="img-fluid" style="max-height: 80px;">
+                </div>
+                <div class="col-6 col-md-3 mb-4 text-center">
+                    <img src="https://via.placeholder.com/150x80?text=KASNEB" alt="KASNEB" class="img-fluid" style="max-height: 80px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Fees Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-header bg-primary text-white">
+                            <h3 class="mb-0">Additional Fees Information</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Registration Fee
+                                    <span class="badge bg-primary rounded-pill">1,000 Ksh</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Student ID
+                                    <span class="badge bg-primary rounded-pill">500 Ksh</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Attachment Fees
+                                    <span class="badge bg-primary rounded-pill">2,000 Ksh</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>External Examination Fee:</strong> Determined by the respective examination body and varies from time to time
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Project Materials:</strong> Required for practical courses such as Cosmetology, Fashion & Design, and others
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-4">Ready to Start Your Journey?</h2>
+            <p class="lead mb-5">Take advantage of our special fee structure and quality technical training.</p>
+            <a href="#" class="btn btn-light btn-lg px-5 me-3">Apply Now</a>
+            <a href="#" class="btn btn-outline-light btn-lg px-5">Download Full Fees Structure</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <img src="https://via.placeholder.com/150x50?text=CHTC+Logo" alt="Capital Highway Training College" class="mb-3">
+                    <p>P.O. BOX 16B-20321, Rumuruti Kenya</p>
+                    <p>
+                        <i class="fas fa-phone me-2"></i> 070667890 / 0725673243<br>
+                        <i class="fas fa-phone me-2"></i> 072884455 / 0715477554<br>
+                        <i class="fas fa-envelope me-2"></i> capitalhighwaytrainingcollege@gmail.com
+                    </p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Programs</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Admissions</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="mb-4">Accreditation</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-check-circle me-2"></i> The Computer Society of Kenya</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2"></i> NITA Registered</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2"></i> KNEC Approved</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2"></i> TVET-CDACC Accredited</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">Visit Us</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> Rumuruti Town, Kenya</p>
+                    <p><i class="fas fa-clock me-2"></i> Mon-Fri: 8:00 AM - 5:00 PM</p>
+                    <p><i class="fas fa-calendar-alt me-2"></i> Sat: 9:00 AM - 1:00 PM</p>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2023 Capital Highway Training College. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">
+                        <a href="#" class="text-white text-decoration-none me-3">Privacy Policy</a>
+                        <a href="#" class="text-white text-decoration-none">Terms of Service</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // JavaScript for enhanced functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Department filter functionality
+            const departmentTabs = document.querySelectorAll('#departmentTabs .nav-link');
+            departmentTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // In a real implementation, this would filter the courses shown
+                    console.log('Filtering by:', this.textContent);
+                });
+            });
+            
+            // Course card hover effect enhancement
+            const courseCards = document.querySelectorAll('.course-card');
+            courseCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.querySelector('.card-header').style.backgroundColor = 'var(--primary-pink)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.querySelector('.card-header').style.backgroundColor = 'var(--primary-blue)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

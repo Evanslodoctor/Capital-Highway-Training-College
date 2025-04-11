@@ -38,28 +38,3 @@
 
 
 
-/* Hide dropdown by default */
-.dropdown-menu {
-  display: none;
-  list-style: none;
-  padding: 10px 0;
-  background-color: #fff;
-  position: absolute;
-  z-index: 1000;
-  min-width: 200px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-}
-
-/* Show dropdown when active */
-.dropdown.active .dropdown-menu {
-  display: block;
-}
-
-/* For mobile - make sure it stacks nicely */
-@media (max-width: 768px) {
-  .dropdown-menu {
-    position: static;
-    box-shadow: none;
-    background-color: transparent;
-  }
-}

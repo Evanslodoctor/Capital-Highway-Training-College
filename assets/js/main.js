@@ -63,11 +63,20 @@
    */
   const preloader = document.querySelector('#preloader');
   if (preloader) {
+    // Remove preloader when page fully loads
     window.addEventListener('load', () => {
       preloader.remove();
     });
+  
+    // Fallback: remove preloader after 10 seconds
+    setTimeout(() => {
+      if (document.body.contains(preloader)) {
+        preloader.remove();
+        console.warn('Preloader removed after timeout.');
+      }
+    }, 5000); // 10,000 ms = 5 seconds
   }
-
+  
   /**
    * Scroll top button
    */

@@ -1960,3 +1960,213 @@ section,
 .ict-courses h2{
  color: pink;
 }
+
+/* -------------------------------------------------------- COURSES PAGE-------------------------------- */
+
+:root {
+  --primary-blue: #003366;
+  --primary-pink: #FF6B8B;
+  --primary-gray: #6C757D;
+  --light-gray: #F8F9FA;
+  --dark-gray: #343A40;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--dark-gray);
+}
+
+.navbar {
+  background-color: var(--primary-blue);
+}
+
+.navbar-brand img {
+  height: 50px;
+}
+
+.btn-primary {
+  background-color: var(--primary-blue);
+  border-color: var(--primary-blue);
+}
+
+.btn-outline-primary {
+  color: var(--primary-blue);
+  border-color: var(--primary-blue);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-blue);
+  color: white;
+}
+
+.accent-color {
+  color: var(--primary-pink);
+}
+
+.bg-light-gray {
+  background-color: var(--light-gray);
+}
+
+.hero-section {
+  background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)), 
+              url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 100px 0;
+}
+.tab-content{
+
+}
+.course-card {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 20px;
+  border: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.course-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.course-card .card-header {
+  background-color: var(--primary-blue);
+  color: white;
+  padding: 15px;
+  border-bottom: 0;
+}
+
+.course-card .card-body {
+  padding: 20px;
+}
+
+.course-card .card-footer {
+  background-color: var(--light-gray);
+  border-top: 0;
+  padding: 15px 20px;
+}
+
+.badge-knec {
+  background-color: #28a745;
+  color: white;
+}
+
+.badge-tvet {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.badge-nita {
+  background-color: #6f42c1;
+  color: white;
+}
+
+.badge-chtc {
+  background-color: var(--primary-pink);
+  color: white;
+}
+
+.badge-kasneb {
+  background-color: #fd7e14;
+  color: white;
+}
+
+.requirements-badge {
+  background-color: var(--primary-gray);
+  color: white;
+  font-size: 0.8rem;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: rgba(0, 51, 102, 0.1);
+  color: var(--primary-blue);
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: rgba(0, 51, 102, 0.25);
+}
+
+footer {
+  background-color: var(--primary-blue);
+  color: white;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 20px;
+  margin-right: 15px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: var(--primary-pink);
+}
+
+.department-tabs .nav-link {
+  color: var(--primary-gray);
+  font-weight: 500;
+}
+
+.department-tabs .nav-link.active {
+  color: var(--primary-blue);
+  border-bottom: 3px solid var(--primary-pink);
+}
+
+.course-level {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.course-level h2 {
+  display: inline-block;
+  background-color: var(--primary-blue);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.fee-highlight {
+  font-weight: bold;
+  color: var(--primary-pink);
+}
+
+.search-container {
+  background-color: white;
+  border-radius: 50px;
+  padding: 8px 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.search-container .form-control {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.search-container .form-control:focus {
+  box-shadow: none;
+}
+
+.no-results {
+  text-align: center;
+  padding: 50px;
+  color: var(--primary-gray);
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+      padding: 60px 0;
+  }
+  
+  .course-card {
+      margin-bottom: 15px;
+  }
+}
+
+/* -----------------------------------end of courses page-----------------------------------*/

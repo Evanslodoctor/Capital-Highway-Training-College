@@ -160,4 +160,45 @@ window.addEventListener('scroll', function() {
   }
 });
 
+// ----------------------------------Exam Bodies
 
+document.addEventListener('DOMContentLoaded', function() {
+  const swiper = new Swiper('.accreditation-swiper', {
+    loop: true,
+    speed: 600,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    slidesPerView: 1,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      576: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 25,
+      },
+      992: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+      1200: {
+        slidesPerView: 5,
+        spaceBetween: 30,
+      }
+    }
+  });
+});
+
+// -------------------------------End of Exam Bodies

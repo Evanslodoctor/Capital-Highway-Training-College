@@ -2015,9 +2015,7 @@ body {
   color: white;
   padding: 100px 0;
 }
-.tab-content{
 
-}
 .course-card {
   border-radius: 10px;
   overflow: hidden;
@@ -2039,8 +2037,15 @@ body {
   border-bottom: 0;
 }
 
+.course-card .card-header h5{
+  color: white;
+}
+.course-card .card-header h5:hover{
+  color: var(--primary-gray);
+}
 .course-card .card-body {
   padding: 20px;
+  
 }
 
 .course-card .card-footer {
@@ -2170,3 +2175,39 @@ footer {
 }
 
 /* -----------------------------------end of courses page-----------------------------------*/
+
+/* --------------------------Departments */
+.department-header{
+  position: relative;
+  width: 100vw; /* Full screen width */
+  background-image: url('../img/chtc/college-students-different-ethnicities-cramming (1).jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll; /* Use scroll for better mobile support */
+  
+  padding: 50px 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.department-header h1,.department-header h2, .department-header h3, .department-header p{
+  color: white;
+
+}
+
+.department-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Adjust transparency level */
+  z-index: 1;
+}
+
+/* Ensure text is above the overlay */
+.department-header > * {
+  position: relative;
+  z-index: 2;
+}

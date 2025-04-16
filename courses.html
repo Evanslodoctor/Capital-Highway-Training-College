@@ -198,168 +198,117 @@
                     <button class="nav-link" id="technical-tab" data-bs-toggle="pill" data-bs-target="#technical" type="button">Technical & Engineering</button>
                 </li>
             </ul>
+            <div class="tab-content" id="departmentTabsContent">
+                <div class="tab-pane fade show active" id="all" role="tabpanel">
+                    <!-- All departments content will be dynamically loaded -->
+                    <div class="row row-cols-1 row-cols-md-3 g-4" id="allCoursesContainer"></div>
+                </div>
             
-            <div class="tab-pane fade show active" id="all" role="tabpanel">
-  <div class="row row-cols-1 row-cols-md-3 g-4" id="allCoursesContainer">
-
-    <!-- Full-width section title -->
-    <div class="col-12">
-      <h4 class="fw-bold">Certificate Programs</h4>
-    </div>
-
-    <!-- Example Course Card -->
-    <div class="col">
-      <div class="card h-100">
-        <div class="card-body">
-          <h5 class="card-title">Certificate in ICT</h5>
-          <p class="card-text">Duration: 6 Terms<br>Fee: Ksh 21,500 per term</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Another Course Card -->
-    <div class="col">
-      <div class="card h-100">
-        <div class="card-body">
-          <h5 class="card-title">Certificate in Business Management</h5>
-          <p class="card-text">Duration: 6 Terms<br>Fee: Ksh 21,500 per term</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Another full-width section -->
-    <div class="col-12">
-      <h4 class="fw-bold">Diploma Programs</h4>
-    </div>
-
-    <!-- Diploma Course Card -->
-    <div class="col">
-      <div class="card h-100">
-        <div class="card-body">
-          <h5 class="card-title">Diploma in HRM</h5>
-          <p class="card-text">Duration: 9 Terms<br>Fee: Ksh 22,500 per term</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- And so on... -->
-
-  </div>
-</div>
+                <div class="tab-pane fade" id="ict" role="tabpanel">
+                    <div class="row row-cols-1 row-cols-md-3 g-4" id="ictCoursesContainer"></div>
+                </div>
+            
+                <div class="tab-pane fade" id="business" role="tabpanel">
+                    <div class="row row-cols-1 row-cols-md-3 g-4" id="businessCoursesContainer"></div>
+                </div>
+            
+                <div class="tab-pane fade" id="hospitality" role="tabpanel">
+                    <div class="row row-cols-1 row-cols-md-3 g-4" id="hospitalityCoursesContainer"></div>
+                </div>
+            
+                <div class="tab-pane fade" id="agriculture" role="tabpanel">
+                    <div class="row row-cols-1 row-cols-md-3 g-4" id="agricultureCoursesContainer"></div>
+                </div>
+            
+                <div class="tab-pane fade" id="fashion" role="tabpanel">
+                    <div class="row row-cols-1 row-cols-md-3 g-4" id="fashionCoursesContainer"></div>
+                </div>
+            
+                <div class="tab-pane fade" id="cosmetology" role="tabpanel">
+                    <div class="row row-cols-1 row-cols-md-3 g-4" id="cosmetologyCoursesContainer"></div>
+                </div>
+            
+                <div class="tab-pane fade" id="technical" role="tabpanel">
+                    <div class="row row-cols-1 row-cols-md-3 g-4" id="technicalCoursesContainer"></div>
+                </div>
+            </div>
+            
 
         </div>
     </section>
 
-    <!-- Exam Bodies & Partnerships Section -->
-<section id="accreditations" class="accreditations section">
-
-    <!-- Section Title -->
-    <div class="container section-title" data-aos="fade-up">
-      <h2>Exam Bodies & Partnerships</h2>
-      <p>Recognized by leading education and professional bodies</p>
-    </div><!-- End Section Title -->
+<!-- Exam Bodies & Partnerships Section -->
+<section id="accreditations" class="py-5 bg-light-gray">
+    <div class="container">
+      <!-- Section Title -->
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="fw-bold">Exam Bodies & Partnerships</h2>
+        <p class="lead text-muted">Recognized Accreditations & Collaborations</p>
+      </div><!-- End Section Title -->
   
-    <div class="container" data-aos="fade-up" data-aos-delay="100">
-  
-      <div class="swiper init-swiper">
-        <script type="application/json" class="swiper-config">
-          {
-            "loop": true,
-            "speed": 600,
-            "autoplay": {
-              "delay": 5000
-            },
-            "slidesPerView": "auto",
-            "pagination": {
-              "el": ".swiper-pagination",
-              "type": "bullets",
-              "clickable": true
-            },
-            "breakpoints": {
-              "320": {
-                "slidesPerView": 1,
-                "spaceBetween": 40
-              },
-              "1200": {
-                "slidesPerView": 3,
-                "spaceBetween": 30
-              }
-            }
-          }
-        </script>
-        <div class="swiper-wrapper">
-  
-          <div class="swiper-slide">
-            <div class="partner-wrap">
-              <div class="partner-item">
-                <img src="assets/img/accreditations/Knec.png" class="partner-img" alt="KNEC">
-                
+      <div class="position-relative" data-aos="fade-up" data-aos-delay="100">
+        <!-- Swiper Container -->
+        <div class="swiper accreditation-swiper">
+          <div class="swiper-wrapper">
+            <!-- KNEC -->
+            <div class="swiper-slide">
+              <div class="partner-item bg-white p-4 rounded-3 shadow-sm h-100 d-flex align-items-center justify-content-center">
+                <img src="assets/img/accreditations/Knec.png" class="img-fluid" alt="KNEC" style="max-height: 80px;">
               </div>
-            </div>
-          </div><!-- End partner item -->
+            </div><!-- End partner item -->
   
-          <div class="swiper-slide">
-            <div class="partner-wrap">
-              <div class="partner-item">
-                <img src="assets/img/accreditations/Tveta.png" class="partner-img" alt="TVETA">
-                
+            <!-- TVETA -->
+            <div class="swiper-slide">
+              <div class="partner-item bg-white p-4 rounded-3 shadow-sm h-100 d-flex align-items-center justify-content-center">
+                <img src="assets/img/accreditations/Tveta.png" class="img-fluid" alt="TVETA" style="max-height: 80px;">
               </div>
-            </div>
-          </div><!-- End partner item -->
+            </div><!-- End partner item -->
   
-          <div class="swiper-slide">
-            <div class="partner-wrap">
-              <div class="partner-item">
-                <img src="assets/img/accreditations/NITA.png" class="partner-img" alt="NITA">
-                
+            <!-- NITA -->
+            <div class="swiper-slide">
+              <div class="partner-item bg-white p-4 rounded-3 shadow-sm h-100 d-flex align-items-center justify-content-center">
+                <img src="assets/img/accreditations/NITA.png" class="img-fluid" alt="NITA" style="max-height: 80px;">
               </div>
-            </div>
-          </div><!-- End partner item -->
+            </div><!-- End partner item -->
   
-          <div class="swiper-slide">
-            <div class="partner-wrap">
-              <div class="partner-item">
-                <img src="assets/img/accreditations/Kasneb.png" class="partner-img" alt="KASNEB">
-                
+            <!-- KASNEB -->
+            <div class="swiper-slide">
+              <div class="partner-item bg-white p-4 rounded-3 shadow-sm h-100 d-flex align-items-center justify-content-center">
+                <img src="assets/img/accreditations/Kasneb.png" class="img-fluid" alt="KASNEB" style="max-height: 80px;">
               </div>
-            </div>
-          </div><!-- End partner item -->
+            </div><!-- End partner item -->
   
-          <div class="swiper-slide">
-            <div class="partner-wrap">
-              <div class="partner-item">
-                <img src="assets/img/accreditations/CISCO.png" class="partner-img" alt="Cisco">
-               
+            <!-- CISCO -->
+            <div class="swiper-slide">
+              <div class="partner-item bg-white p-4 rounded-3 shadow-sm h-100 d-flex align-items-center justify-content-center">
+                <img src="assets/img/accreditations/CISCO.png" class="img-fluid" alt="Cisco" style="max-height: 80px;">
               </div>
-            </div>
-          </div><!-- End partner item -->
+            </div><!-- End partner item -->
   
-          <div class="swiper-slide">
-            <div class="partner-wrap">
-              <div class="partner-item">
-                <img src="assets/img/accreditations/icdl.png" class="partner-img" alt="ICDL">
-                
-            </div>
+            <!-- ICDL -->
+            <div class="swiper-slide">
+              <div class="partner-item bg-white p-4 rounded-3 shadow-sm h-100 d-flex align-items-center justify-content-center">
+                <img src="assets/img/accreditations/icdl.png" class="img-fluid" alt="ICDL" style="max-height: 80px;">
+              </div>
+            </div><!-- End partner item -->
+  
+            <!-- Microsoft -->
+            <div class="swiper-slide">
+              <div class="partner-item bg-white p-4 rounded-3 shadow-sm h-100 d-flex align-items-center justify-content-center">
+                <img src="assets/img/accreditations/Microsoft.png" class="img-fluid" alt="Microsoft" style="max-height: 80px;">
+              </div>
+            </div><!-- End partner item -->
           </div>
-          </div>
-          <!-- End partner item -->
-  
-          <div class="swiper-slide">
-            <div class="partner-wrap">
-              <div class="partner-item">
-                <img src="assets/img/accreditations/Microsoft.png" class="partner-img" alt="Microsoft">
-                
-                
-              </div>
-            </div>
-          </div><!-- End partner item -->
-  
+          
+          <!-- Navigation Buttons -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
         
-        <div class="swiper-pagination"></div>
+        <!-- Pagination -->
+        <div class="swiper-pagination mt-3"></div>
       </div>
-  
     </div>
-  
   </section><!-- /Exam Bodies & Partnerships Section -->
 
     <!-- Additional Fees Section -->
@@ -596,7 +545,7 @@
                         </div>
                         <div class="card-footer">
                             <a href="#" class="btn btn-sm btn-primary">Learn More</a>
-                            <a href="#" class="btn btn-sm btn-outline-primary ms-2">Apply Now</a>
+                            <a href="application.html" class="btn btn-sm btn-outline-primary ms-2">Apply Now</a>
                         </div>
                     </div>
                 </div>

@@ -1,11 +1,3 @@
-/**
-* Template Name: Mentor
-* Template URL: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/
-* Updated: Aug 07 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 (function() {
   "use strict";
 
@@ -19,8 +11,18 @@
     window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
   }
 
-  document.addEventListener('scroll', toggleScrolled);
-  window.addEventListener('load', toggleScrolled);
+  /**
+   * Debounce function to limit how often a function is called
+   */
+  function debounce(func, wait = 100) {
+    let timeout;
+    return function() {
+      clearTimeout(timeout);
+      timeout = setTimeout(func, wait);
+    };
+  }
+
+  document.addEventListener('scroll', debounce(toggleScrolled));
 
   /**
    * Mobile nav toggle
@@ -43,7 +45,6 @@
         mobileNavToogle();
       }
     });
-
   });
 
   /**
@@ -59,24 +60,25 @@
   });
 
   /**
-   * Preloader
+   * Optimized Preloader - Will disappear when DOM is ready or after max 3 seconds
    */
   const preloader = document.querySelector('#preloader');
   if (preloader) {
-    // Remove preloader when page fully loads
-    window.addEventListener('load', () => {
-      preloader.remove();
+    const hidePreloader = () => {
+      preloader.style.transition = 'opacity 0.5s ease';
+      preloader.style.opacity = '0';
+      setTimeout(() => preloader.remove(), 500);
+    };
+
+    // Remove when DOM is ready
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(hidePreloader, 1000); // Give it at least 1 second
     });
-  
-    // Fallback: remove preloader after 10 seconds
-    setTimeout(() => {
-      if (document.body.contains(preloader)) {
-        preloader.remove();
-        console.warn('Preloader removed after timeout.');
-      }
-    }, 5000); // 5,000 ms = 5 seconds
+
+    // Safety net: remove after max 3 seconds
+    setTimeout(hidePreloader, 3000);
   }
-  
+
   /**
    * Scroll top button
    */
@@ -95,110 +97,120 @@
     });
   });
 
-  window.addEventListener('load', toggleScrollTop);
-  document.addEventListener('scroll', toggleScrollTop);
+  document.addEventListener('scroll', debounce(toggleScrollTop));
 
   /**
-   * Animation on scroll function and init
+   * Initialize functionality when DOM is ready
    */
-  function aosInit() {
-    AOS.init({
-      duration: 600,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
-    });
-  }
-  window.addEventListener('load', aosInit);
+  document.addEventListener('DOMContentLoaded', function() {
+    toggleScrolled();
+    toggleScrollTop();
 
-  /**
-   * Initiate glightbox
-   */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
+    /**
+     * Animation on scroll function and init
+     */
+    if (typeof AOS !== 'undefined') {
+      AOS.init({
+        duration: 600,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+      });
+    }
 
-  /**
-   * Initiate Pure Counter
-   */
-  new PureCounter();
+    /**
+     * Initiate glightbox
+     */
+    if (typeof GLightbox !== 'undefined') {
+      const glightbox = GLightbox({
+        selector: '.glightbox'
+      });
+    }
 
-  /**
-   * Init swiper sliders
-   */
-  function initSwiper() {
-    document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
-      let config = JSON.parse(
-        swiperElement.querySelector(".swiper-config").innerHTML.trim()
-      );
+    /**
+     * Initiate Pure Counter
+     */
+    if (typeof PureCounter !== 'undefined') {
+      new PureCounter();
+    }
 
-      if (swiperElement.classList.contains("swiper-tab")) {
-        initSwiperWithCustomPagination(swiperElement, config);
-      } else {
-        new Swiper(swiperElement, config);
-      }
-    });
-  }
+    /**
+     * Init swiper sliders
+     */
+    function initSwiper() {
+      if (typeof Swiper === 'undefined') return;
+      
+      document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
+        let config = JSON.parse(
+          swiperElement.querySelector(".swiper-config").innerHTML.trim()
+        );
 
-  window.addEventListener("load", initSwiper);
+        if (swiperElement.classList.contains("swiper-tab")) {
+          initSwiperWithCustomPagination(swiperElement, config);
+        } else {
+          new Swiper(swiperElement, config);
+        }
+      });
+    }
+    initSwiper();
 
-})();
-
-
-
-
-window.addEventListener('scroll', function() {
-  const topbar = document.getElementById('topbar');
-  const header = document.getElementById('header');
-  
-  if (window.scrollY > 50) {
-    header.classList.add('moving-up');
-    topbar.style.opacity = "0";
-  } else {
-    header.classList.remove('moving-up');
-    topbar.style.opacity = "1";
-  }
-});
-
-// ----------------------------------Exam Bodies
-
-document.addEventListener('DOMContentLoaded', function() {
-  const swiper = new Swiper('.accreditation-swiper', {
-    loop: true,
-    speed: 600,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    slidesPerView: 1,
-    spaceBetween: 20,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    breakpoints: {
-      576: {
-        slidesPerView: 2,
+    /**
+     * Exam Bodies Swiper
+     */
+    if (typeof Swiper !== 'undefined') {
+      const accreditationSwiper = new Swiper('.accreditation-swiper', {
+        loop: true,
+        speed: 600,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        slidesPerView: 1,
         spaceBetween: 20,
-      },
-      768: {
-        slidesPerView: 3,
-        spaceBetween: 25,
-      },
-      992: {
-        slidesPerView: 4,
-        spaceBetween: 30,
-      },
-      1200: {
-        slidesPerView: 5,
-        spaceBetween: 30,
-      }
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        breakpoints: {
+          576: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 25,
+          },
+          992: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+          },
+          1200: {
+            slidesPerView: 5,
+            spaceBetween: 30,
+          }
+        }
+      });
     }
   });
-});
 
-// -------------------------------End of Exam Bodies
+  /**
+   * Header scroll effect
+   */
+  window.addEventListener('scroll', debounce(function() {
+    const topbar = document.getElementById('topbar');
+    const header = document.getElementById('header');
+    
+    if (window.scrollY > 50) {
+      header.classList.add('moving-up');
+      topbar.style.opacity = "0";
+    } else {
+      header.classList.remove('moving-up');
+      topbar.style.opacity = "1";
+    }
+  }));
+
+})();

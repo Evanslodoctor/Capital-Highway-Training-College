@@ -1,0 +1,610 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Capital Highway Training College | Diploma & Certificate Courses in Kenya</title>
+  <meta name="description" content="Capital Highway Training College (CHTC) offers diploma, certificate, and artisan courses in ICT, Business, Cosmetology, Fashion & Design, and more. Located in Rumuruti, Laikipia County.">
+  <meta name="keywords" content="Capital Highway Training College, CHTC, diploma courses, certificate courses, artisan courses, ICT training, business training, cosmetology, fashion design, technical college Kenya, best training college in Rumuruti">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="assets/css/combined.min.css" as="style">
+  <link rel="preload" href="assets/vendor/bootstrap/css/bootstrap.min.css" as="style">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Favicons -->
+  <link rel="icon" href="assets/img/favicon.webp" type="image/webp">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.webp">
+  
+  <!-- Combined and minified CSS -->
+  <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/combined.min.css">
+  <!-- Main CSS File -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/slider.css">
+  <link rel="stylesheet" href="assets/css/trans.css">
+  <style>
+    :root {
+        --primary-blue: #003366;
+        --secondary-blue: #0066cc;
+        --light-blue: #e6f2ff;
+        --accent-pink: #ff6699;
+        --dark-gray: #333333;
+        --medium-gray: #666666;
+        --light-gray: #f8f9fa;
+    }
+    
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--dark-gray);
+    }
+    
+   
+    
+    .hero-section {
+        background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 102, 204, 0.8)), url('https://via.placeholder.com/1920x600') center/cover no-repeat;
+        color: white;
+        padding: 100px 0;
+        text-align: center;
+    }
+    
+    .section_title {
+        color: var(--primary-blue);
+        position: relative;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    
+    .section_title:after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 3px;
+        background: var(--accent-pink);
+        margin: 15px auto;
+    }
+    
+    .leadership-card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+        margin-bottom: 30px;
+        background-color: white;
+    }
+    
+    .leadership-card:hover {
+        transform: translateY(-10px);
+    }
+    
+    .profile-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin: -75px auto 20px;
+        display: block;
+        background-color: var(--light-blue);
+    }
+    
+    .card-body {
+        padding: 30px;
+        text-align: center;
+    }
+    
+    .position {
+        color: var(--secondary-blue);
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+    
+    .contact_info {
+        background-color: var(--light-gray);
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 20px;
+    }
+    
+    .contact_info a {
+        color: var(--medium-gray);
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    
+    .contact_info a:hover {
+        color: var(--primary-blue);
+    }
+    
+    .education {
+        font-style: italic;
+        color: var(--medium-gray);
+        margin: 15px 0;
+    }
+    
+    .org-structure {
+        background-color: var(--light-blue);
+        padding: 50px 0;
+    }
+    
+    .org-chart {
+        position: relative;
+        margin-top: 50px;
+    }
+    
+    .org-level {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 50px;
+    }
+    
+    .org-node {
+        background: white;
+        border-radius: 8px;
+        padding: 15px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 200px;
+        margin: 0 15px;
+        position: relative;
+    }
+    
+    .org-node:after {
+        content: "";
+        position: absolute;
+        bottom: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 25px;
+        background: var(--medium-gray);
+    }
+    
+    .org-node img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+        border: 3px solid var(--light-blue);
+    }
+    
+    .org-node .name {
+        font-weight: 600;
+        color: var(--primary-blue);
+    }
+    
+    .org-node .title {
+        font-size: 0.9rem;
+        color: var(--medium-gray);
+    }
+    
+
+    
+ 
+    .badge-accomplishment {
+        background-color: var(--accent-pink);
+        color: white;
+        margin: 2px;
+    }
+    
+    @media (max-width: 768px) {
+        .hero-section {
+            padding: 60px 0;
+        }
+        
+        .org-level {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .org-node {
+            margin-bottom: 40px;
+        }
+        
+        .org-node:after {
+            display: none;
+        }
+    }
+</style>
+  <!-- Structured Data for Google Rich Results (Courses) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Capital Highway Training College",
+    "url": "https://www.capitalhighwaycollege.ac.ke/",
+    "logo": "https://www.capitalhighwaycollege.ac.ke/assets/img/logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "166 Buffalo Street",
+      "addressLocality": "Rumuruti",
+      "addressRegion": "Laikipia",
+      "postalCode": "20321",
+      "addressCountry": "KE"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+254710667990",
+      "contactType": "customer service"
+    },
+    "sameAs": [
+      "https://www.facebook.com/capitalhighwaycollege",
+      "https://www.instagram.com/capitalhighwaycollege",
+      "https://twitter.com/capitalhighway"
+    ]
+  }
+  </script>
+</head>
+
+
+<body class="index-page">
+
+  <header id="topbar" class="topbar d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex justify-content-between align-items-center">
+      <div class="contact-info d-none d-md-block">
+        <i class="bi bi-envelope"></i> <a href="mailto:capitalhighwaytrainingcollege@gmail.com">capitalhighwaytrainingcollege@gmail.com</a>
+        <i class="bi bi-phone"></i> 0710667990 / 0725673243
+      </div>
+      <div class="social-links">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </header>
+  
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <img src="assets/img/logo.jpeg" loading="lazy" alt="">
+        <h1 class="d-none d-md-block">Capital Highway Training College <br><span>Competence & Hardwork</span></h1>
+      </a>
+  
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="dropdown">
+            <a href="#"><span>Departments</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="Department/department-ict.html">ICT & Computer Science</a></li>
+              <li><a href="Department/department-business.html">Business</a></li>
+              <li><a href="Department/department-fashion.html">Fashion & Design</a></li>
+              <li><a href="Department/department-cosmetology.html">Cosmetology</a></li>
+              <li><a href="Department/department-agriculture.html">Agriculture</a></li>
+              <li><a href="Department/department-hospitality.html">Hospitality</a></li>
+              <li><a href="Department/department-technical.html">Technical & Engineering</a></li>
+              <li><a href="Department/department-music.html">Music Production & Video Editing</a></li>
+            </ul>
+          </li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="downloads.html">Downloads</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+      
+      <a class="btn-getstarted" href="application.html">Get Started</a>
+    </div>
+  </header>
+
+  
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Leadership & Organizational Management</h1>
+            <p class="lead">Meet the distinguished team guiding Capital Highway Training College towards academic excellence</p>
+        </div>
+    </section>
+
+    <!-- Board of Directors Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section_title">Board of Directors</h2>
+            <div class="row justify-content-center">
+                <!-- Chairperson -->
+                <div class="col-lg-6">
+                    <div class="leadership-card">
+                        <img src="https://via.placeholder.com/300x300?text=Caroline+Ngugi" alt="Dr. Caroline Ngugi" class="profile-img">
+                        <div class="card-body">
+                            <h3 class="h4">Dr. Caroline Ngugi</h3>
+                            <p class="position">Chairperson, Board of Directors</p>
+                            <p class="education">Doctor of Medicine in Neurosurgery</p>
+                            <p>With extensive experience in both medical and administrative leadership, Dr. Ngugi provides strategic oversight to ensure the college fulfills its mission of excellence.</p>
+                            <div class="contact_info">
+                                <p><i class="fas fa-phone me-2"></i> <a href="tel:+254712345678"></a></p>
+                                <p><i class="fas fa-envelope me-2"></i> <a href="mailto:chairperson@capitalhighway.ac.ke">chairperson@capitalhighway.ac.ke</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Chief Principal -->
+                <div class="col-lg-6">
+                    <div class="leadership-card">
+                        <img src="assets/img/team/chiefprincipal.jpg" alt="Prof. Richard Subo" class="profile-img">
+                        <div class="card-body">
+                            <h3 class="h4">Prof. Richard Subo, LLB, PGDE</h3>
+                            <p class="position">Chief Principal / Board</p>
+                            <p class="education">Law Degree (LLB), Postgraduate Diploma in Education (PGDE)</p>
+                            <p>With 20+ years of academic leadership, Prof. Subo serves as:</p>
+                            <div class="mb-3">
+                                <span class="badge badge-accomplishment">University Professor in Law</span>
+                                <span class="badge badge-accomplishment">Criminology & French Library Science Expert</span>
+                                <span class="badge badge-accomplishment">Global Legal Executive</span>
+                                <span class="badge badge-accomplishment">Magazine Editor-in-Chief</span>
+                                <span class="badge badge-accomplishment">CEO Kings Hill High Institution</span>
+                            </div>
+                            
+                            <div class="contact_info">
+                                <p><i class="fas fa-phone me-2"></i> <a href="tel:+254710667990">+254 710 667 990</a></p>
+                                <p><i class="fas fa-envelope me-2"></i> <a href="mailto:principal@capitalhighway.ac.ke">principal@capitalhighway.ac.ke</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Management Team Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section_title">Management Team</h2>
+            <div class="row">
+                <!-- Center Manager -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="leadership-card">
+                        <img src="https://via.placeholder.com/300x300?text=James+Gitonga" alt="James Gitonga" class="profile-img">
+                        <div class="card-body">
+                            <h3 class="h4">James Gitonga</h3>
+                            <p class="position">Center Manager & Head of Academics</p>
+                            <p class="education">BSc in Education, Diploma in Project Management</p>
+                            <p>James oversees daily operations and academic programs, ensuring quality education delivery and institutional efficiency.</p>
+                            <div class="contact_info">
+                                <p><i class="fas fa-phone me-2"></i> <a href="tel:+254725673243">+254 725 673 243</a></p>
+                                <p><i class="fas fa-envelope me-2"></i> <a href="mailto:manager@capitalhighway.ac.ke">manager@capitalhighway.ac.ke</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- HR/Finance -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="leadership-card">
+                        <img src="https://via.placeholder.com/300x300?text=Maryanne" alt="Maryanne" class="profile-img">
+                        <div class="card-body">
+                            <h3 class="h4">Maryanne</h3>
+                            <p class="position">HR & Finance Manager</p>
+                            <p class="education">Higher Diploma in Human Resource Management</p>
+                            <p>Maryanne manages human resources and financial operations, ensuring compliance and optimal resource allocation.</p>
+                            <div class="contact_info">
+                                <p><i class="fas fa-phone me-2"></i> <a href="tel:+254745678901">+254 745 678 901</a></p>
+                                <p><i class="fas fa-envelope me-2"></i> <a href="mailto:hr@capitalhighway.ac.ke">hr@capitalhighway.ac.ke</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ICT Administrator -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="leadership-card">
+                        <img src="https://via.placeholder.com/300x300?text=Chaun+Evans" alt="Chaun Evans" class="profile-img">
+                        <div class="card-body">
+                            <h3 class="h4">Chaun Evans</h3>
+                            <p class="position">ICT Administrator & Technician</p>
+                            <p class="education">Bachelor's in Computer Science, CCNA Certified</p>
+                            <p>Chaun manages all technology infrastructure, ensuring seamless digital operations and supporting e-learning initiatives.</p>
+                            <div class="contact_info">
+                                <p><i class="fas fa-phone me-2"></i> <a href="tel:+254743645826">+254 743 645 826</a></p>
+                                <p><i class="fas fa-envelope me-2"></i> <a href="mailto:evanschaun@gmail.com">ict@capitalhighway.ac.ke</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Customer Care -->
+                 <div class="col-md-6 col-lg-4">
+                    <div class="leadership-card">
+                        <img src="https://via.placeholder.com/300x300?text=Sabina+Macharia" alt="Sabina Macharia" class="profile-img">
+                        <div class="card-body">
+                            <h3 class="h4">Sabina Macharia</h3>
+                            <p class="position">Customer Care & Student Relations</p>
+                            <p class="education">Diploma in Business Management</p>
+                            <p>Sabina ensures excellent student experience from admission through graduation, addressing concerns and fostering positive relationships.</p>
+                            <div class="contact_info">
+                                <p><i class="fas fa-phone me-2"></i> <a href="tel:+254715477554">+254 715 477 554</a></p>
+                                <p><i class="fas fa-envelope me-2"></i> <a href="mailto:customercare@capitalhighway.ac.ke">customercare@capitalhighway.ac.ke</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Organizational Structure Section -->
+    <section class="org-structure py-5">
+        <div class="container">
+            <h2 class="section_title">Our Organizational Structure</h2>
+            <p class="text-center mb-5">Capital Highway Training College operates with a clear hierarchical structure that ensures efficient governance and operational excellence.</p>
+            
+            <div class="org-chart">
+                <!-- Board Level -->
+                <div class="org-level">
+                    <div class="org-node">
+                        <img src="https://via.placeholder.com/150x150?text=Board" alt="Board of Directors">
+                        <div class="name">Board of Directors</div>
+                        <div class="title">Governance & Strategy</div>
+                    </div>
+                </div>
+                
+                <!-- Chief Principal Level -->
+                <div class="org-level">
+                    <div class="org-node">
+                        <img src="https://via.placeholder.com/150x150?text=Prof+Subo" alt="Prof Richard Subo">
+                        <div class="name">Prof. Richard Subo</div>
+                        <div class="title">Chief Principal</div>
+                    </div>
+                </div>
+                
+                <!-- Management Level -->
+                <div class="org-level">
+                    <div class="org-node">
+                        <img src="https://via.placeholder.com/150x150?text=James+Gitonga" alt="James Gitonga">
+                        <div class="name">James Gitonga</div>
+                        <div class="title">Center Manager</div>
+                    </div>
+                    <div class="org-node">
+                        <img src="https://via.placeholder.com/150x150?text=Maryanne" alt="Maryanne">
+                        <div class="name">Maryanne</div>
+                        <div class="title">HR/Finance</div>
+                    </div>
+                </div>
+                
+                <!-- Department Level -->
+                <div class="org-level">
+                    <div class="org-node">
+                        <img src="https://via.placeholder.com/150x150?text=Chaun" alt="Chaun Evans">
+                        <div class="name">Chaun Evans</div>
+                        <div class="title">ICT Department</div>
+                    </div>
+                    <div class="org-node">
+                        <img src="https://via.placeholder.com/150x150?text=Academics" alt="Academic Heads">
+                        <div class="name">Academic Heads</div>
+                        <div class="title">Teaching Departments</div>
+                    </div>
+                    <div class="org-node">
+                        <img src="https://via.placeholder.com/150x150?text=Support" alt="Support Staff">
+                        <div class="name">Support Staff</div>
+                        <div class="title">Administration</div>
+                    </div>
+                    <div class="org-node">
+                        <img src="https://via.placeholder.com/150x150?text=Sabina" alt="Sabina Macharia">
+                        <div class="name">Sabina Macharia</div>
+                        <div class="title">Customer Care</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Values Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section_title text-start">Our Leadership Philosophy</h2>
+                    <p>At Capital Highway Training College, our leadership is guided by:</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> <strong>Academic Excellence:</strong> Maintaining highest standards in education</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> <strong>Ethical Governance:</strong> Transparency and accountability in all operations</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> <strong>Global Perspective:</strong> Incorporating international best practices</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> <strong>Spiritual Foundation:</strong> Values-based leadership approach</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> <strong>Student Success:</strong> Prioritizing learner outcomes and development</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://via.placeholder.com/600x400?text=Leadership+Team" alt="Leadership Team Meeting" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="footer position-relative light-background">
+        <div class="container footer-top">
+          <div class="row gy-4">
+            <div class="col-lg-4 col-md-6 footer-about">
+              <a href="index.html" class="logo d-flex align-items-center">
+                <span class="sitename">Capital Highway Training College</span>
+              </a>
+              <div class="footer-contact pt-3">
+                <p>166 Buffalo Street, Rumuruti</p>
+                <p>Laikipia County, Kenya</p>
+                <p class="mt-3"><strong>Phone:</strong> <span>0710667990 / 0725673243 / 0728841455</span></p>
+                <p><strong>Email:</strong> <span>capitalhighwaytrainingcollege@gmail.com</span></p>
+              </div>
+              <div class="social-links d-flex mt-4">
+                <a href="https://twitter.com/capitalhighway"><i class="bi bi-twitter"></i></a>
+                <a href="https://www.facebook.com/capitalhighwaycollege"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com/capitalhighwaycollege"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/capital-highway-training-college"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+      
+            <div class="col-lg-2 col-md-3 footer-links">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="trainers.html">Trainers</a></li>
+                <li><a href="events.html">Events</a></li>
+              </ul>
+            </div>
+      
+            <div class="col-lg-2 col-md-3 footer-links">
+              <h4>Departments</h4>
+              <ul>
+                <li><a href="Department/Department-of-ICT.html">ICT & Computer Science</a></li>
+                <li><a href="Department/Department-of-Business.html">Business</a></li>
+                <li><a href="Department/Department-of-Fashion-Design.html">Fashion & Design</a></li>
+                <li><a href="Department/Department-of-Cosmetology.html">Cosmetology</a></li>
+                <li><a href="Department/Department-of-Music-Production.html">Music Production</a></li>
+              </ul>
+            </div>
+      
+            <div class="col-lg-4 col-md-12 footer-newsletter">
+              <h4>Subscribe to Our Newsletter</h4>
+              <p>Get the latest updates on our courses, events, and promotions. Subscribe now!</p>
+              <form action="forms/newsletter.php" method="post" class="php-email-form">
+                <div class="newsletter-form">
+                  <input type="email" name="email" placeholder="Your Email Address" required>
+                  <input type="submit" value="Subscribe">
+                </div>
+                <div class="loading">Loading...</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Thank you for subscribing!</div>
+              </form>
+            </div>
+          </div>
+        </div>
+      
+        <div class="container copyright text-center mt-4">
+          <p>© <span>Copyright</span> <strong class="px-1 sitename">Capital Highway Training College</strong> <span>All Rights Reserved</span></p>
+          <div class="credits">
+            Designed by <a href="https://prodevevans.netlify.app/">Chaun Evans</a>
+          </div>
+        </div>
+      </footer>
+      
+      <!-- Scroll Top Button -->
+      <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+      
+      <!-- Preloader -->
+      <div id="preloader"></div>
+      
+      <!-- Vendor JS Files -->
+      <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="assets/vendor/php-email-form/validate.js"></script>
+      <script src="assets/vendor/aos/aos.js"></script>
+      <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+      <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+      <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+      
+      <!-- Main JS File -->
+      <script src="assets/js/main.js"></script>
+      
+      </body>
+      </html>
